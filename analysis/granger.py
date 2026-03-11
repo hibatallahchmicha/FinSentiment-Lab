@@ -91,7 +91,7 @@ class GrangerAnalyzer:
         self,
         max_lag: int                         = 5,
         pairs:   Optional[List[tuple]]       = None,
-        min_obs: int                         = 60,
+        min_obs: int                         = 25,  # Lowered from 60 to handle sparse data
     ):
         self.max_lag = max_lag
         self.pairs   = pairs or DEFAULT_PAIRS

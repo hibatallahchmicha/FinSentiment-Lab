@@ -1,0 +1,22 @@
+[
+  "\u2500\u2500 Q1: Does negative news predict price drops? \u2500\u2500",
+  "  AAPL: Pearson r=nan, p=nan  \u2717 not significant",
+  "  MSFT: Pearson r=nan, p=nan  \u2717 not significant",
+  "  TSLA: Pearson r=nan, p=nan  \u2717 not significant",
+  "  POOLED: Pearson r=nan, p=nan  \u2717 not significant",
+  "\n\u2500\u2500 Q2: Is sentiment predictive of volatility? \u2500\u2500",
+  "  AAPL: Pearson r=nan, p=nan  \u2717 not significant",
+  "  MSFT: Pearson r=nan, p=nan  \u2717 not significant",
+  "  TSLA: Pearson r=nan, p=nan  \u2717 not significant",
+  "  POOLED: Pearson r=nan, p=nan  \u2717 not significant",
+  "\n\u2500\u2500 Q4: How much variance does sentiment explain? \u2500\u2500",
+  "  MSFT | return_5d_target: adj-R\u00b2=0.2148 | F-p=0.0034",
+  "  TSLA | return_5d_target: adj-R\u00b2=0.1625 | F-p=0.0119",
+  "  AAPL | return_5d_target: adj-R\u00b2=0.1164 | F-p=0.0337",
+  "  POOLED | return_5d_target: adj-R\u00b2=0.0940 | F-p=0.0009",
+  "\n\u2500\u2500 Q5: Most correlated sentiment feature per ticker \u2500\u2500",
+  "  TSLA: price_vs_sma_30d (r=-0.504, p=0.000)",
+  "  AAPL: vol_ratio_5_21 (r=0.438, p=0.002)",
+  "  MSFT: rsi_14d (r=-0.218, p=0.145)",
+  "  POOLED: return_10d (r=-0.185, p=0.018)"
+]

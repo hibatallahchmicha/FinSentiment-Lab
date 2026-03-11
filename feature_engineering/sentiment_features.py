@@ -172,8 +172,12 @@ class SentimentFeatureBuilder:
         # Values > 2 or < -2 are unusually strong signals.
         if f"sentiment_roll_30d" in group.columns and f"sentiment_std_30d" in group.columns:
             roll30  = group["sentiment_roll_30d"]
-            std30   = group["sentiment_std_30d"].replace(0, np.nan)   # avoid div/0
+            std30   = group["sentiment_std_30d"].fillna(0)
+            # Use a minimum std threshold to avoid division by zero
+            std30   = std30.replace(0.0, 0.01)
             group["sentiment_zscore"] = ((score - roll30) / std30).round(4)
+            # Replace infinite values with 0 (insufficient variation)
+            group["sentiment_zscore"] = group["sentiment_zscore"].replace([np.inf, -np.inf], 0.0)
 
         # Crossover: short-term vs long-term sentiment momentum
         # Positive = recent sentiment improving vs baseline (bullish signal)

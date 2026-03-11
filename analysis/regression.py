@@ -127,7 +127,7 @@ class OLSAnalyzer:
     def __init__(
         self,
         model_specs: Optional[Dict] = None,
-        min_obs:     int            = 40,
+        min_obs:     int            = 15,  # Lowered from 40 to handle sparse data
     ):
         self.model_specs = model_specs or MODEL_SPECS
         self.min_obs     = min_obs

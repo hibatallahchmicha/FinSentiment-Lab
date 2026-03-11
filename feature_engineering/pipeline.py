@@ -252,8 +252,6 @@ Targets (for Module 4/5)
   forward_return_1d | forward_return_5d | direction_1d | forward_vol_5d
 """
 
-from __future__ import annotations
-
 import glob
 import os
 from datetime import datetime, timezone

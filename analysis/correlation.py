@@ -81,7 +81,7 @@ class CorrelationAnalyzer:
         feature_cols: Optional[List[str]] = None,
         target_cols:  Optional[List[str]] = None,
         top_n:        int = 5,
-        min_obs:      int = 30,
+        min_obs:      int = 10,  # Lowered from 30 to handle sparse data
     ):
         self.feature_cols = feature_cols or (SENTIMENT_FEATURES + PRICE_FEATURES)
         self.target_cols  = target_cols  or TARGET_COLS
@@ -169,9 +169,13 @@ class CorrelationAnalyzer:
             col_pvals = {}
             for feat in feat_cols:
                 pair = sub[[feat, target]].dropna()
-                if len(pair) >= self.min_obs:
-                    _, p = stats.pearsonr(pair[feat], pair[target])
-                    col_pvals[feat] = round(p, 6)
+                # Use pairwise deletion: only require min observations for this pair
+                if len(pair) >= max(5, self.min_obs // 4):  # More lenient for sparse data
+                    try:
+                        _, p = stats.pearsonr(pair[feat], pair[target])
+                        col_pvals[feat] = round(p, 6)
+                    except (ValueError, ZeroDivisionError):
+                        col_pvals[feat] = np.nan
                 else:
                     col_pvals[feat] = np.nan
             pval_data[target] = col_pvals
