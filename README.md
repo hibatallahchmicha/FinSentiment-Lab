@@ -341,7 +341,7 @@ MIT License - see LICENSE file for details
 
 **Hibatallah Chmicha**
 - GitHub: [@hibatallahchmicha](https://github.com/hibatallahchmicha)
-- Email: hibatallahchmicha@example.com
+
 
 ---
 
