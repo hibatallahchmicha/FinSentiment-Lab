@@ -39,5 +39,8 @@ build/
 *~
 .DS_Store
 
+# Streamlit
+.streamlit/secrets.toml
+
 # OS
 Thumbs.db
