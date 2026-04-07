@@ -52,7 +52,35 @@ Financial markets are increasingly driven by news sentiment and media narratives
 
 ---
 
-## 📊 Features
+## � Dashboard Preview
+
+### Navigation & Real-Time Prices
+Real-time streaming prices update every 60 seconds from market data.
+![Navigation](docs/screenshots/01-navigation.png)
+
+### Sentiment + Price Timeline
+Dual-axis visualization showing sentiment scores (bars) and price movements (line) with 7-day moving average overlay.
+![Sentiment Timeline](docs/screenshots/02-sentiment-timeline.png)
+
+### Live Market Statistics
+Current market metrics including average sentiment, bullish/bearish day counts, and volatility measures.
+![Live Metrics](docs/screenshots/03-live-metrics.png)
+
+### Sentiment Analysis Details
+Historical daily sentiment scores with comprehensive statistics and trend analysis.
+![Statistics](docs/screenshots/04-statistics.png)
+
+### Granger Causality Results
+Statistical proof of significant relationships between sentiment features and price movements (p-value < 0.05).
+![Granger Causality](docs/screenshots/05-granger-causality.png)
+
+### Model Performance Leaderboard
+Top-performing ML models ranked by AUC, Sharpe ratio, and other risk-adjusted metrics.
+![Leaderboard](docs/screenshots/06-leaderboard.png)
+
+---
+
+## �📊 Features
 
 ### Dashboard Views
 
